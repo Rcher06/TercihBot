@@ -5,10 +5,6 @@ def main():
     sortings = []
     for i in os.listdir("./tables/"):
         sortings += takeSortings(readHtml(i.split(".")[0]))
-    """s1 = takeSortings(readHtml("table1"))
-    s2 = takeSortings(readHtml("table2"))
-    s3 = takeSortings(readHtml("table3"))
-    s4 = takeSortings(readHtml("table4"))"""
     x = []
     for i in sortings:
         avr = marginsToAverage(i)
@@ -24,7 +20,7 @@ def main():
 
 def readHtml(fName:str) -> str:
     print(f"Reading HTML string from {fName}...")
-    with open(f"./{fName}.html", "r") as f:
+    with open(f"./tables/{fName}.html", "r") as f:
         html = f.read()
         f.close()
     return html
